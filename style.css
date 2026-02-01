@@ -3,7 +3,6 @@
   box-sizing: border-box;
   color: #515076;
 }
-
 .container {
   margin: 0;
   color: #ffffff;
@@ -27,7 +26,6 @@
   margin: 220px 217px 110px 217px;
   position: relative;
 }
-
 .product-card__wrapper {
   display: flex;
   justify-content: center;
@@ -38,7 +36,6 @@
   margin: 110px 85px 116px 85px;
   position: relative;
 }
-
 .product-card__card {
   width: 340px;
   height: 573px;
@@ -91,8 +88,7 @@
   padding-left: 0;
   list-style-position: inside;
 }
-
-.card__ingredients ::marker {
+.card__ingredients::marker {
   width: 7px;
   height: 7px;
   margin-left: 25px;
@@ -102,7 +98,7 @@
   margin-bottom: 5px;
   font-size: 13px;
 }
-.li ::marker {
+.li::marker {
   position: relative;
   margin-bottom: 5px;
   font-size: 13px;
