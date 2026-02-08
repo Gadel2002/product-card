@@ -28,8 +28,7 @@ googlePageOpenButton.addEventListener('click', openGoogle);
 
 function openGoogle() {
   const answer = confirm('Вы по правде хотите перейти на страницу гугл?');
-  console.log(answer);
-  if (answer === true) {
+  if (answer) {
     window.open('https://google.com');
   } else {
     console.log('Пользователь не перешел на страницу');
