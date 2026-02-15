@@ -1,12 +1,12 @@
 //Создание функции, которая анализирует погоду в определенном городе
 
-const observationWeather = (city, temperature) => {
+const showWeather = (city, temperature) => {
   console.log(
     `Сейчас в ${city} температура — ${temperature} градусов по Цельсию`
   );
 };
 
-observationWeather('Медина', 30);
+showWeather('Медина', 30);
 
 //Создание функции, которая анализирует скорость света
 
@@ -30,7 +30,7 @@ washSpeed(299792458);
 const product = 'milk';
 const price = 4;
 
-const calculationBudget = (budget) => {
+const purchase = (budget) => {
   if (budget >= price) {
     console.log(`${product} приобретён. Спасибо за покупку!`);
   } else {
@@ -38,6 +38,19 @@ const calculationBudget = (budget) => {
     console.log(`Вам не хватает ${difference}$, пополните баланс`);
   }
 };
+purchase(6);
+purchase(2);
 
-calculationBudget(6);
-calculationBudget(2);
+//Создание функций и именование её по своему усмотрению
+
+const myFn = (name) => {
+  console.log(`Меня зовут ${name}`);
+};
+
+myFn('Гадель');
+
+//Создание трех переменных и именование их по своему усмотрению
+
+const myName = 'Gadel';
+const mySurname = 'Khuzin';
+const myFullName = 'Gadel khuzin';
