@@ -22,7 +22,7 @@ const dataCar = {
   typeOfTransmission: 'Automatic',
 };
 
-dataCar.carOwner = 'Gadel';
+dataCar.owner = myInfo;
 
 //Написать функцию которая аргументом будет принимать объект,
 //описанный в пункте №4. Она проверяет,
@@ -30,20 +30,20 @@ dataCar.carOwner = 'Gadel';
 //если нет - добавляет его и задает значение,
 //если есть - прекращает выполнение (ничего не делает)
 
-const checkMaxSpeed = (dataCar) => {
+const addMaxSpeed = (dataCar) => {
   if (!('maxSpeed' in dataCar)) {
     dataCar.maxSpeed = 300;
   }
 };
 
-checkMaxSpeed(dataCar);
+addMaxSpeed(dataCar);
 
 // Написать функцию, которая получает первым аргументом  — объект,
 // а вторым аргументом — свойство объекта,
 // которое нужно вывести и выводит его значение
 
-const outputObjectValue = (myInfo, position) => {
-  console.log(myInfo[position]);
+const outputObjectValue = (obj, value) => {
+  console.log(obj[value]);
 };
 
 outputObjectValue(myInfo, 'position');
@@ -143,11 +143,11 @@ const unificArray = [...arrayBooks, ...twoArrayBooks];
 // Что я хочу этим сказать: если книга выпущена позже 2000 года,
 // устанавливаем true (да, это редкий), нет - false (значит это не редкий)
 
-const addRareStatus = (booksArray) => {
+const getArrayBooks = (booksArray) => {
   return booksArray.map((book) => {
     return { ...book, isRare: book.yearOfRelease > 2000 };
   });
 };
 
-const updateBook = addRareStatus(unificArray);
+const updateBook = getArrayBooks(unificArray);
 console.log(updateBook);
