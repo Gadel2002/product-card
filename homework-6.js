@@ -143,11 +143,11 @@ const unificArray = [...arrayBooks, ...twoArrayBooks];
 // Что я хочу этим сказать: если книга выпущена позже 2000 года,
 // устанавливаем true (да, это редкий), нет - false (значит это не редкий)
 
-const getArrayBooks = (booksArray) => {
+const getRareBook = (booksArray) => {
   return booksArray.map((book) => {
     return { ...book, isRare: book.yearOfRelease > 2000 };
   });
 };
 
-const updateBook = getArrayBooks(unificArray);
+const updateBook = getRareBook(unificArray);
 console.log(updateBook);
