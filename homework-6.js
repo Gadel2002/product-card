@@ -22,7 +22,9 @@ const dataCar = {
   typeOfTransmission: 'Automatic',
 };
 
+
 dataCar.owner = user;
+
 
 //Написать функцию которая аргументом будет принимать объект,
 //описанный в пункте №4. Она проверяет,
@@ -47,6 +49,7 @@ const outputObjectValue = (obj, value) => {
 };
 
 outputObjectValue(user, 'position');
+
 
 // Создать массив, который содержит названия продуктов (просто строки)
 
@@ -143,11 +146,16 @@ const unificArray = [...arrayBooks, ...twoArrayBooks];
 // Что я хочу этим сказать: если книга выпущена позже 2000 года,
 // устанавливаем true (да, это редкий), нет - false (значит это не редкий)
 
+
 const getRareBooks = (booksArray) => {
+
   return booksArray.map((book) => {
     return { ...book, isRare: book.yearOfRelease > 2000 };
   });
 };
 
+
 const updateBook = getRareBooks(unificArray);
+
+
 console.log(updateBook);
