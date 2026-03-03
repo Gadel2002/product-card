@@ -1,6 +1,6 @@
 //Объект с моими данными
 
-const myInfo = {
+const user = {
   name: 'Gadel',
   surname: 'Khuzin',
   email: 'Khuzin.gadel@gmail.com',
@@ -22,7 +22,9 @@ const dataCar = {
   typeOfTransmission: 'Automatic',
 };
 
-dataCar.owner = myInfo;
+
+dataCar.owner = user;
+
 
 //Написать функцию которая аргументом будет принимать объект,
 //описанный в пункте №4. Она проверяет,
@@ -46,7 +48,8 @@ const outputObjectValue = (obj, value) => {
   console.log(obj[value]);
 };
 
-outputObjectValue(myInfo, 'position');
+outputObjectValue(user, 'position');
+
 
 // Создать массив, который содержит названия продуктов (просто строки)
 
@@ -143,11 +146,16 @@ const unificArray = [...arrayBooks, ...twoArrayBooks];
 // Что я хочу этим сказать: если книга выпущена позже 2000 года,
 // устанавливаем true (да, это редкий), нет - false (значит это не редкий)
 
-const getArrayBooks = (booksArray) => {
+
+const getRareBooks = (booksArray) => {
+
   return booksArray.map((book) => {
     return { ...book, isRare: book.yearOfRelease > 2000 };
   });
 };
 
-const updateBook = getArrayBooks(unificArray);
+
+const updateBook = getRareBooks(unificArray);
+
+
 console.log(updateBook);
