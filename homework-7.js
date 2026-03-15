@@ -6,7 +6,7 @@ import { commentsInSocialMedia } from './comments.js';
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const result = numbers.filter((number) => number >= 5);
+const filterArrayNumbers = numbers.filter((number) => number >= 5);
 
 // Создать массив строк, относящихся к любой сущности
 // (название фильмов/книг, кухонные приборы, мебель и т.д.),
