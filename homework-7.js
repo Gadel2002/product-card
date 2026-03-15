@@ -12,25 +12,25 @@ const result = numbers.filter((number) => number >= 5);
 // (название фильмов/книг, кухонные приборы, мебель и т.д.),
 // проверить, есть ли в массиве какая-то определенная сущность.
 
-const string = [
+const books = [
   'The Genius of Birds',
   'Bird by Bird',
   'The Bird Way',
   'Silent Spring',
 ];
 
-const newArray = string.includes('The Bird Way');
+const checkElementArray = books.includes('The Bird Way');
 
 // Написать функцию, которая аргументом будет принимать массив
 // и изменять его порядок на противоположный ("переворачивать") .
 // Два вышеуказанных массива с помощью этой функции перевернуть.
 
-const changeOrder = (array) => {
+const changeOrderArray = (array) => {
   return array.reverse();
 };
 
-console.log(changeOrder(numbers));
-console.log(changeOrder(string));
+console.log(changeOrderArray(numbers));
+console.log(changeOrderArray(books));
 
 // Вывести в консоль массив тех комментариев,
 // почта пользователей которых содержит ".com"
@@ -50,9 +50,10 @@ const users = commentsInSocialMedia.map((user) => ({
 
 // Перебрать массив, что бы объекты состояли только из айди и имени
 
-const searchArray = commentsInSocialMedia.map(
-  ({ postId, email, body, ...obj }) => obj
-);
+const searchArray = commentsInSocialMedia.map((user) => ({
+  id: user.id,
+  name: user.name,
+}));
 
 // Перебираем массив, добавляем объектам свойство isInvalid и проверяем:
 // если длина тела сообщения (body) больше 180 символов - устанавливаем true,
@@ -89,5 +90,3 @@ const arrayStringTwo = emailArrayTwo.toString();
 const arrayStringThree = emailArrayOne.join();
 
 const arrayStringFour = emailArrayTwo.join();
-
-
