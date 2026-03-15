@@ -19,18 +19,16 @@ const books = [
   'Silent Spring',
 ];
 
-const checkElementArray = books.includes('The Bird Way');
+const hasBook = books.includes('The Bird Way');
 
 // Написать функцию, которая аргументом будет принимать массив
 // и изменять его порядок на противоположный ("переворачивать") .
 // Два вышеуказанных массива с помощью этой функции перевернуть.
 
-const changeOrderArray = (array) => {
-  return array.reverse();
-};
+const reverseArray = (array) => array.reverse();
 
-console.log(changeOrderArray(numbers));
-console.log(changeOrderArray(books));
+console.log(reverseArray(numbers));
+console.log(reverseArray(books));
 
 // Вывести в консоль массив тех комментариев,
 // почта пользователей которых содержит ".com"
@@ -43,25 +41,25 @@ const usersCom = commentsInSocialMedia.filter((comment) =>
 // или равно 5 имели postId: 2, а те, у кого id больше 5,
 // имели postId: 1
 
-const users = commentsInSocialMedia.map((user) => ({
-  ...user,
-  postId: user.id <= 5 ? 2 : 1,
+const updatedComments = commentsInSocialMedia.map((comment) => ({
+  ...comment,
+  postId: comment.id <= 5 ? 2 : 1,
 }));
 
 // Перебрать массив, что бы объекты состояли только из айди и имени
 
-const searchArray = commentsInSocialMedia.map((user) => ({
-  id: user.id,
-  name: user.name,
+const usersWithIdandName = commentsInSocialMedia.map((comment) => ({
+  id: comment.id,
+  name: comment.name,
 }));
 
 // Перебираем массив, добавляем объектам свойство isInvalid и проверяем:
 // если длина тела сообщения (body) больше 180 символов - устанавливаем true,
 // меньше - false.
 
-const secSearchArray = commentsInSocialMedia.map((property) => ({
-  ...property,
-  isInvalid: property.body.length > 180,
+const commentsWithIsInvalidFlag = commentsInSocialMedia.map((comment) => ({
+  ...comment,
+  isInvalid: comment.body.length > 180,
 }));
 
 // Почитать про метод массива reduce.
@@ -69,24 +67,24 @@ const secSearchArray = commentsInSocialMedia.map((property) => ({
 // с помощью метода map
 
 //REDUSE
-const emailArrayOne = commentsInSocialMedia.reduce((acc, comment) => {
+const emailsFromReduce = commentsInSocialMedia.reduce((acc, comment) => {
   acc.push(comment.email);
   return acc;
 }, []);
 
 //MAP
-const emailArrayTwo = commentsInSocialMedia.map((comment) => comment.email);
+const emailsFromMap = commentsInSocialMedia.map((comment) => comment.email);
 
 // Почитать про методы toString(), join()
 // и перебрав массив с задания №11,
 // привести его к строке
 
 //toString()
-const arrayStringOne = emailArrayOne.toString();
+const emailsStringFromReduce = emailsFromReduce.toString();
 
-const arrayStringTwo = emailArrayTwo.toString();
+const emailsStringFromMap = emailsFromMap.toString();
 
 //join()
-const arrayStringThree = emailArrayOne.join();
+const joinedEmailsFromReduce = emailsFromReduce.join();
 
-const arrayStringFour = emailArrayTwo.join();
+const joinedEmailsFromMap = emailsFromMap.join();
