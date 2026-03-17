@@ -48,7 +48,7 @@ const updatedComments = commentsInSocialMedia.map((comment) => ({
 
 // Перебрать массив, что бы объекты состояли только из айди и имени
 
-const usersWithIdandName = commentsInSocialMedia.map((comment) => ({
+const usersIdName = commentsInSocialMedia.map((comment) => ({
   id: comment.id,
   name: comment.name,
 }));
@@ -57,7 +57,7 @@ const usersWithIdandName = commentsInSocialMedia.map((comment) => ({
 // если длина тела сообщения (body) больше 180 символов - устанавливаем true,
 // меньше - false.
 
-const commentsWithIsInvalidFlag = commentsInSocialMedia.map((comment) => ({
+const validatedComments = commentsInSocialMedia.map((comment) => ({
   ...comment,
   isInvalid: comment.body.length > 180,
 }));
@@ -67,24 +67,24 @@ const commentsWithIsInvalidFlag = commentsInSocialMedia.map((comment) => ({
 // с помощью метода map
 
 //REDUSE
-const emailsFromReduce = commentsInSocialMedia.reduce((acc, comment) => {
+const emailsByReduce = commentsInSocialMedia.reduce((acc, comment) => {
   acc.push(comment.email);
   return acc;
 }, []);
 
 //MAP
-const emailsFromMap = commentsInSocialMedia.map((comment) => comment.email);
+const emailsByMap = commentsInSocialMedia.map((comment) => comment.email);
 
 // Почитать про методы toString(), join()
 // и перебрав массив с задания №11,
 // привести его к строке
 
 //toString()
-const emailsStringFromReduce = emailsFromReduce.toString();
+const emailsStringByReduce = emailsByReduce.toString();
 
-const emailsStringFromMap = emailsFromMap.toString();
+const emailsStringByMap = emailsByMap.toString();
 
 //join()
-const joinedEmailsFromReduce = emailsFromReduce.join();
+const joinedEmailsByReduce = emailsByReduce.join();
 
-const joinedEmailsFromMap = emailsFromMap.join();
+const joinedEmailsByMap = emailsByMap.join();
