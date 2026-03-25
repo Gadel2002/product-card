@@ -1,23 +1,25 @@
 // Покраска первой карточки
 
 const firstCardRecolerButton = document.getElementById(
-  'recoler-first-card-button'
+  'recolor-first-card-button'
 );
-const firstProductCard = document.querySelector('.product-card__card');
+
 const orangeHashColor = '#FFA500';
 
 firstCardRecolerButton.addEventListener('click', () => {
-  firstProductCard.style.background = orangeHashColor;
+  const firstProductCard = document.querySelector('.product-card__card');
+  if (firstProductCard) {
+    firstProductCard.style.background = orangeHashColor;
+  }
 });
 
 //Покраска всех карточек
 
 const redHashColor = '#FF0000';
-
-const productCards = document.querySelectorAll('.product-card__card');
-const allCardRecolerButton = document.getElementById('recoler-all-card-button');
+const allCardRecolerButton = document.getElementById('recolor-all-card-button');
 
 allCardRecolerButton.addEventListener('click', () => {
+  const productCards = document.querySelectorAll('.product-card__card');
   productCards.forEach((card) => (card.style.background = redHashColor));
 });
 

@@ -102,7 +102,7 @@
   white-space: nowrap;
 }
 
-.card__discription {
+.card__description {
   width: 287px;
   height: 36px;
   margin-top: 5px;
@@ -124,6 +124,7 @@
   margin-top: 5px;
   margin-bottom: 25px;
   padding-left: 0;
+  list-style-type: circle;
   list-style-position: inside;
 }
 
@@ -139,7 +140,20 @@
   font-size: 13px;
 }
 
-.li::marker {
+.card__ingredients li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border: 1px solid #515076;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+li::marker {
   position: relative;
   margin-bottom: 5px;
   font-size: 13px;
