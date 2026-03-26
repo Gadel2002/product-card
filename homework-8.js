@@ -6,10 +6,6 @@ import { productCards } from './product-cards.js';
 const productCardTemplate = document.getElementById('product-card__template');
 const productCardsList = document.getElementById('product-card__list');
 
-const formatPrice = (price) => {
-  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-};
-
 //Реализовать функцию, которая при старте страницы выводит
 //сообщение (через функцию prompt) "Сколько карточек отобразить? От 1 до 5"
 //и в зависимости от результата - будет выводить введенное количество.
@@ -27,20 +23,22 @@ const getNumberOfCards = () => {
     return number;
   } else {
     console.log('Нужно ввести число от 1 до 5!');
-    return 0;
+    return getNumberOfCards();
   }
 };
 
-const renderCards = (n) => {
+const renderCards = (count) => {
   productCardsList.innerHTML = '';
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < count; i++) {
     const card = productCards[i];
     const cardClone = productCardTemplate.content.cloneNode(true);
-    cardClone.querySelector('.card__img').src = card.image;
+    cardClone.querySelector('.card__img').src = `./images/${card.image}.png`;
     cardClone.querySelector('.card__for-skin').textContent = card.skinType;
     cardClone.querySelector('.card__use').textContent = card.title;
     cardClone.querySelector('.card__description').textContent =
       card.description;
+    cardClone.querySelector('.price').textContent =
+      card.price.toLocaleString('ru-RU') + ' ₽';
 
     const ul = cardClone.querySelector('.card__ingredients');
     ul.innerHTML = '';
@@ -49,9 +47,6 @@ const renderCards = (n) => {
       li.textContent = ingredient;
       ul.appendChild(li);
     });
-
-    const formattedPrice = formatPrice(card.price);
-    cardClone.querySelector('.price').textContent = formattedPrice + ' ₽';
 
     productCardsList.appendChild(cardClone);
   }
@@ -63,9 +58,7 @@ const renderCards = (n) => {
 const productDescription = productCards.reduce((acc, card) => {
   acc[card.title] = card.description;
   return acc;
-}, {});
+}, []);
 
 const numberOfCards = getNumberOfCards();
-if (numberOfCards > 0) {
-  renderCards(numberOfCards);
-}
+renderCards(numberOfCards);
