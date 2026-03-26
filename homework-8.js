@@ -48,6 +48,9 @@ const renderCards = (cards, count) => {
       ul.appendChild(li);
     });
 
+    const formattedPrice = formatPrice(card.price);
+    cardClone.querySelector('.price').textContent = formattedPrice + ' ₽';
+
     productCardsList.appendChild(cardClone);
   }
 };
@@ -59,6 +62,7 @@ const productDescription = productCards.reduce((acc, card) => {
   acc[card.title] = card.description;
   return acc;
 }, []);
+
 
 const numberOfCards = getNumberOfCards();
 renderCards(productCards, numberOfCards);
