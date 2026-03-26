@@ -27,10 +27,10 @@ const getNumberOfCards = () => {
   }
 };
 
-const renderCards = (count) => {
+const renderCards = (cards, count) => {
   productCardsList.innerHTML = '';
   for (let i = 0; i < count; i++) {
-    const card = productCards[i];
+    const card = cards[i];
     const cardClone = productCardTemplate.content.cloneNode(true);
     cardClone.querySelector('.card__img').src = `./images/${card.image}.png`;
     cardClone.querySelector('.card__for-skin').textContent = card.skinType;
@@ -61,4 +61,4 @@ const productDescription = productCards.reduce((acc, card) => {
 }, []);
 
 const numberOfCards = getNumberOfCards();
-renderCards(numberOfCards);
+renderCards(productCards, numberOfCards);
