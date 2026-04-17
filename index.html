@@ -32,6 +32,7 @@
       <button class="click__button" id="change-my-color">
         Поменяй мой цвет
       </button>
+      <button class="button__card" id="button-registration">Регистрация</button>
       <div class="product-card__wrapper" id="product-card__list"></div>
       <template id="product-card__template">
         <div class="product-card__card">
@@ -46,12 +47,137 @@
             <span class="price"></span>
           </div>
         </div>
-      </template>
+      </template>`
     </div>
+    <div class="modal" id="modal">
+      <div class="modal__overlay"></div>
+      <div class="modal__content">
+        <button class="close__modal" type="button" id="close-modal">
+          &times;
+        </button>
+        <form
+          action=""
+          class="modal__form"
+          id="form-registration"
+          name="registration"
+        >
+          <label for="name">Имя:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Ваше имя..."
+            required
+          />
+          <label for="surname">Фамилия:</label>
+          <input
+            type="text"
+            name="surname"
+            id="surname"
+            placeholder="Ваша фамилия..."
+            required
+          />
+          <label for="birthData">Дата рождения:</label>
+          <input
+            type="date"
+            name="birthData"
+            id="birthData"
+            placeholder="Ваша дата рождения..."
+            required
+          />
+          <label for="login">Логин:</label>
+          <input
+            type="text"
+            name="login"
+            id="login"
+            placeholder="Ваш логин..."
+            required
+          />
+          <label for="password">Пароль:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Введите пароль..."
+            required
+            minlength="8"
+          />
+          <label for="password-confirm">Повторите пароль:</label>
+          <input
+            type="password"
+            name="passwordConfirm"
+            id="password-confirm"
+            placeholder="Повторите пароль..."
+            required
+            minlength="8"
+          />
+          <button class="button__registration" type="submit">
+            Зарегистрироваться
+          </button>
+        </form>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__content-one">
+          <p class="footer__logo">Product Cards</p>
+          <p class="footer__text">У нас самые лучшие продукты для кожи!</p>
+          <div class="footer__socials">
+            <a href="#">
+              <img
+                class="footer__icon-link"
+                src="./images/icon-telegram.svg"
+                alt="Telegram"
+              />
+            </a>
+            <a href="#">
+              <img
+                class="footer__icon-link"
+                src="./images/icon-Vk.svg"
+                alt="VK"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="footer__content-two">
+          <p class="footer__subscribe">Подпишись на наши акции:</p>
+          <form action="" id="email-form" class="footer__form" name="email">
+            <input
+              type="email"
+              name="email"
+              placeholder="Введи Email..."
+              class="footer__input"
+              required
+            />
+            <img
+              src="./images/line-input.png"
+              alt="Черточка"
+              class="form__img"
+            />
+            <button type="submit" class="footer__btn">Подписаться</button>
+          </form>
+        </div>
+        <div class="footer__content-three">
+          <a class="footer__links">Быстрые ссылки</a>
+          <div class="footer__list">
+            <a class="footer__link" href="#">Главная</a>
+            <a class="footer__link" href="#">Магазин</a>
+            <a class="footer__link" href="#">Контакты</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <img src="./images/line-bottom.png" class="footer__line" />
+      </div>
+      <a href="#" class="footer__site-link"
+        >www.product-cards.com©all rights reserved.</a
+      >
+    </footer>
     <script src="./homework-5.js"></script>
     <script src="./homework-6.js"></script>
     <script type="module" src="./homework-7.js"></script>
     <script type="module" src="./homework-8.js"></script>
-    <script src="./main.js"></script>
+    <script src="./homework-9.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
