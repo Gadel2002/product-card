@@ -328,6 +328,7 @@ li::marker {
 
 .footer__link {
   color: #ffffff;
+  text-decoration: none;
 }
 
 .footer__bottom {
