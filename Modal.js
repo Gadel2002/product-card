@@ -12,33 +12,15 @@
 // модальными окнами. Как? Используя внутренние методы - мы можем
 // управлять через айди модалки ее закрытием, открытием.
 
-class Modal {
+export class Modal {
   constructor(modalId) {
     this.modal = document.getElementById(modalId);
-    this.initCloseBtn();
+    this.showClass = 'show';
   }
   open() {
-    this.modal.classList.add('show');
+    this.modal.classList.add(this.showClass);
   }
   close() {
-    this.modal.classList.remove('show');
-  }
-  isOpen() {
-    return this.modal.classList.contains('active');
-  }
-  initCloseBtn() {
-    const btn = this.modal.querySelector('.close__modal');
-    if (btn) {
-      btn.addEventListener('click', () => {
-        this.close();
-      });
-    }
+    this.modal.classList.remove(this.showClass);
   }
 }
-
-const modal = new Modal('modal');
-
-const openBtn = document.getElementById('button-registration');
-openBtn.addEventListener('click', () => {
-  modal.open();
-});

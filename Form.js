@@ -10,7 +10,7 @@
 // мы можем управлять через айди формы получением значений и всем,
 // что должна делать модалка.
 
-class Form {
+export class Form {
   constructor(formId) {
     this.form = document.getElementById(formId);
   }
@@ -36,30 +36,3 @@ class Form {
     this.form.reset();
   }
 }
-
-const registrationForm = new Form('form-registration');
-
-let registeredUser = null;
-
-registrationForm.form.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  if (registrationForm.validateForm()) {
-    const data = registrationForm.getValuesForm();
-
-    registeredUser = {
-      ...data,
-      createdOn: new Date(),
-    };
-
-    console.log('USER:', registeredUser);
-
-    const modal = document.getElementById('modal');
-    modal.classList.remove('modal--active');
-    modal.style.display = 'none';
-
-    registrationForm.resetForm();
-  } else {
-    console.log('Форма заполнена не правильно');
-  }
-});
