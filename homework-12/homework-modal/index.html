@@ -9,11 +9,11 @@
   <body>
     <div class="overlay" id="overlay"></div>
 
-    <button class="button" id="registration-button">Регистрация</button>
-    <button class="button" id="auth-button">Аутентификация</button>
+    <button class="button" data-modal="registration-modal">Регистрация</button>
+    <button class="button" data-modal="auth-modal">Аутентификация</button>
 
     <div id="registration-modal" class="modal">
-      <button id="modal-close-button" class="modal-close-button">X</button>
+      <button class="modal-close-button">X</button>
       <h1>Регистрация</h1>
       <span>Пароль</span>
       <span>Повторите пароль</span>
@@ -22,7 +22,7 @@
     </div>
 
     <div id="auth-modal" class="modal">
-      <button id="modal-close-button" class="modal-close-button">X</button>
+      <button class="modal-close-button">X</button>
       <h1>Аутентификация</h1>
       <p>Логин</p>
       <p>Пароль</p>
