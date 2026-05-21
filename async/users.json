@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Andrey",
+      "surname": "Volkov",
+      "age": 30,
+      "email": "andrey.volkov30@gmail.com"
+    },
+
+    {
+      "id": 2,
+      "name": "Aleksey",
+      "surname": "Solovev",
+      "age": 22,
+      "email": "aleksey.solovev@gmail.com"
+    },
+
+    {
+      "id": 3,
+      "name": "Bogdan",
+      "surname": "Volodin",
+      "age": 19,
+      "email": "bogdan.volodin@mail.ru"
+    },
+
+    {
+      "id": 4,
+      "name": "Mihail",
+      "surname": "Ivanov",
+      "age": 24,
+      "email": "mihailivanov24@mail.ru"
+    },
+
+    {
+      "id": 5,
+      "name": "Oleg",
+      "surname": "Vorobev",
+      "age": 17,
+      "email": "olegvorobev@gmail.com"
+    }
+  ]
+}
