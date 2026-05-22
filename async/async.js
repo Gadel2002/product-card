@@ -28,6 +28,21 @@ const renderUsers = (users) => {
   }
 };
 
+const loadUsers = () => {
+  fetch('./users.json')
+    .then((response) => response.json())
+    .then((data) => {
+      renderUsers(data.users);
+
+      localStorage.setItem('users', JSON.stringify(data.users));
+
+      loader.style.display = 'none';
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
 const localUsers = localStorage.getItem('users');
 
 if (localUsers) {
@@ -72,9 +87,7 @@ const getAllCards = () => {
     loader.style.display = 'none';
     usersList.style.display = 'flex';
   } else {
-    loader.style.display = 'flex';
-    messageTitle.textContent = 'Нет сохраненных пользавателей!';
-    usersList.innerHTML = '';
+    loadUsers();
   }
 };
 
