@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  font-family: Montserrat, sans-serif;
+}
+
+.container {
+  max-width: 100%;
+  min-height: 100%;
+}
+
+.container__btn {
+  width: 370px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remove-all-cards {
+  margin-top: 40px;
+  margin-left: 20px;
+  padding: 10px;
+  background: #504242;
+  color: rgb(216, 223, 67);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.get-all-cards {
+  margin-top: 40px;
+  margin-right: 20px;
+  padding: 10px;
+  background: #504242;
+  color: rgb(216, 223, 67);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container__message {
+  margin-top: 180px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.users__container {
+  margin: 100px;
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.user__card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 300px;
+  padding: 20px;
+  border: solid 1px;
+  border-radius: 10px;
+  background: #c54444;
+}
+
+.remove__definite-card {
+  margin-top: 15px;
+  padding: 7px;
+  background: #312727;
+  color: #dfe5c8;
+  border-radius: 5px;
+  cursor: pointer;
+}
